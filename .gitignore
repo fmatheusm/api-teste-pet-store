@@ -2,4 +2,6 @@
 cypress/screenshots/
 cypress/videos/
 node_modules/
+reports/
+final-report/
 package-lock.json

@@ -33,6 +33,14 @@ module.exports = defineConfig({
     defaultCommandTimeout: 40000,
     responseTimeout: 30000,
     chromeWebSecurity: false,
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/reports',
+      overwrite: false,
+      html: true,
+      json: true,
+      timestamp: 'dd-mm-yyyy_HH-MM-ss'
+    }
   },
 });
 

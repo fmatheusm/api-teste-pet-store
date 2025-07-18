@@ -1,0 +1,347 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 7,
+    "passes": 5,
+    "pending": 0,
+    "failures": 2,
+    "testsRegistered": 7,
+    "passPercent": 71.42857142857143,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-07-18T16:01:45.999Z",
+    "end": "2025-07-18T16:01:54.205Z",
+    "duration": 8206
+  },
+  "results": [
+    {
+      "uuid": "47477d1c-f16b-4279-97c2-a9e33c0bd358",
+      "title": "",
+      "fullFile": "cypress/e2e/pet/getFindByStatus.cy.js",
+      "file": "cypress/e2e/pet/getFindByStatus.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fa9b603c-4648-40d6-a30e-2a821e1a66f5",
+          "title": "Testes endpoint store order",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve buscar o pet pelo status: available",
+              "fullTitle": "Testes endpoint store order Deve buscar o pet pelo status: available",
+              "timedOut": null,
+              "duration": 1284,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getQs(endPet.getFindByStatus, status, auth).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.be.an('array').and.to.have.length.greaterThan(0);\n  cy.validaContrato('schemaPet/getFindByStatus200.json', response.body);\n});",
+              "err": {},
+              "uuid": "3a076773-1d32-418c-b065-b1309f9cf714",
+              "parentUUID": "fa9b603c-4648-40d6-a30e-2a821e1a66f5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve buscar o pet pelo status: pending",
+              "fullTitle": "Testes endpoint store order Deve buscar o pet pelo status: pending",
+              "timedOut": null,
+              "duration": 173,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getQs(endPet.getFindByStatus, status, auth).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.be.an('array').and.to.have.length.greaterThan(0);\n  cy.validaContrato('schemaPet/getFindByStatus200.json', response.body);\n});",
+              "err": {},
+              "uuid": "db222b0a-df41-4ef3-8c7a-fa60ac5c67f7",
+              "parentUUID": "fa9b603c-4648-40d6-a30e-2a821e1a66f5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve buscar o pet pelo status: sold",
+              "fullTitle": "Testes endpoint store order Deve buscar o pet pelo status: sold",
+              "timedOut": null,
+              "duration": 325,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getQs(endPet.getFindByStatus, status, auth).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.be.an('array').and.to.have.length.greaterThan(0);\n  cy.validaContrato('schemaPet/getFindByStatus200.json', response.body);\n});",
+              "err": {
+                "message": "AssertionError: expected value to match json-schema '{\"$schema\":\"http://json-schema...' -> '[{\"id\":13,\"category\":{\"id\":0,\"...'\n      Missing required property: name\n          schema: {\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":...\n          rule:   /items/0/required/2 -> \"name\"\n          field:  /0 -> Object: {\"id\":13,\"category\":{\"id\":0,\"name\":\"cats\"},\"photoUrls\":[\"str...",
+                "estack": "AssertionError: expected value to match json-schema '{\"$schema\":\"http://json-schema...' -> '[{\"id\":13,\"category\":{\"id\":0,\"...'\n      Missing required property: name\n          schema: {\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":...\n          rule:   /items/0/required/2 -> \"name\"\n          field:  /0 -> Object: {\"id\":13,\"category\":{\"id\":0,\"name\":\"cats\"},\"photoUrls\":[\"str...\n    at Context.eval (webpack://api-teste-pet-store/./cypress/support/commandsApi.js:6:31)\n    at getRet (http://localhost:46751/__cypress/runner/cypress_runner.js:120949:20)\n    at tryCatcher (http://localhost:46751/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:46751/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:46751/__cypress/runner/cypress_runner.js:120960:66)\n    at Context.then (http://localhost:46751/__cypress/runner/cypress_runner.js:121211:21)\n    at wrapped (http://localhost:46751/__cypress/runner/cypress_runner.js:141532:19)\n    at <unknown> (http://localhost:46751/__cypress/runner/cypress_runner.js:147477:15)\n    at tryCatcher (http://localhost:46751/__cypress/runner/cypress_runner.js:1777:23)",
+                "diff": "- [ { id: 13,\n-     category: { id: 0, name: 'cats' },\n-     photoUrls: [ 'string' ],\n-     tags: [ [Object] ],\n-     status: 'sold' },\n-   { id: 9223372036854740000,\n-     category: { id: -4630181, name: 'nulla quis pariatur' },\n-     name: 'doggie',\n-     photoUrls: [ 'in deserunt esse', 'ut do occaecat non' ],\n-     tags: [ [Object], [Object] ],\n-     status: 'sold' },\n-   { id: 9223372036854776000,\n-     category: { id: 0, name: 'test' },\n-     name: 'cattie',\n-     photoUrls: [ 'string' ],\n-     tags: [ [Object] ],\n-     status: 'sold' },\n-   { id: 9223372036854776000,\n-     category: { id: 0, name: 'string' },\n-     name: 'doggie',\n-     photoUrls: [ 'string' ],\n-     tags: [ [Object] ],\n-     status: 'sold' },\n-   { id: 76342797,\n-     category: { id: -51928180, name: 'consequat deserunt' },\n-     name: 'doggie',\n-     photoUrls: [ 'proident consectetur dolor enim', 'eiusmod ut ex' ],\n-     tags: [ [Object], [Object] ],\n-     status: 'sold' },\n-   { id: 15421818,\n-     category: { id: 3640476, name: 'nostrud' },\n-     name: 'doggie',\n-     photoUrls: [ 'elit non ex irure', 'fugiat magna' ],\n-     tags: [ [Object], [Object] ],\n-     status: 'sold' },\n-   { id: 503252335,\n-     category: { id: 1, name: 'dogs' },\n-     name: 'Sam',\n-     photoUrls: [ 'https://as1.ftcdn.net/v2/jpg/02/74/06/48/1000_F_274064877_Tuq84kGOn5nhyIJeUFTUSvXaSeedAOTT.jpg' ],\n-     status: 'sold' },\n-   { id: 503399884,\n-     category: { id: 1, name: 'dogs' },\n-     name: 'Sam',\n-     photoUrls: [ 'https://as1.ftcdn.net/v2/jpg/02/74/06/48/1000_F_274064877_Tuq84kGOn5nhyIJeUFTUSvXaSeedAOTT.jpg' ],\n-     status: 'sold' },\n-   { id: 20593238,\n-     category: { id: 96650357, name: 'ut aute' },\n-     name: 'doggie',\n-     photoUrls: [ 'in deserunt sit qui elit', 'do dolore' ],\n-     tags: [ [Object], [Object] ],\n-     status: 'sold' },\n-   { id: 1234567,\n-     category: { id: 35, name: 'caini' },\n-     name: 'Grivei update',\n-     photoUrls: [],\n-     tags: [ [Object] ],\n-     status: 'sold' },\n-   { id: 50,\n-     name: 'huhuhu',\n-     photoUrls: [ 'string' ],\n-     tags: [],\n-     status: 'sold' },\n-   { id: 123321,\n-     category: { id: 123321, name: 'cat' },\n-     name: 'Kitty',\n-     photoUrls: [ 'KittyPhoto' ],\n-     tags: [ [Object] ],\n-     status: 'sold' },\n-   { id: 1111,\n-     category: { id: 1111, name: 'cat' },\n-     name: 'Kitty',\n-     photoUrls: [ 'string' ],\n-     tags: [ [Object] ],\n-     status: 'sold' },\n-   { id: 15,\n-     category: { id: 15, name: 'hello' },\n-     photoUrls: [ 'string' ],\n-     tags: [ [Object] ],\n-     status: 'sold' } ]\n+ '{\"$schema\":\"http://json-schema...'\n"
+              },
+              "uuid": "0484b83e-0941-412a-88d9-0b22c7f02374",
+              "parentUUID": "fa9b603c-4648-40d6-a30e-2a821e1a66f5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3a076773-1d32-418c-b065-b1309f9cf714",
+            "db222b0a-df41-4ef3-8c7a-fa60ac5c67f7"
+          ],
+          "failures": [
+            "0484b83e-0941-412a-88d9-0b22c7f02374"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1782,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "92dc3f85-459f-48f8-acb5-3046d5c39969",
+      "title": "",
+      "fullFile": "cypress/e2e/pet/getPet.cy.js",
+      "file": "cypress/e2e/pet/getPet.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "191f8253-4c6b-473f-96d8-be5fd1e9e690",
+          "title": "Testes endpoint store order",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Buscar pet com sucesso",
+              "fullTitle": "Testes endpoint store order Buscar pet com sucesso",
+              "timedOut": null,
+              "duration": 234,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getGenerico(endPointGetPet.getPet, _getPet.buscarPetSucesso.petId, auth).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body.name).to.eq(_getPet.buscarPetSucesso.name);\n  cy.validaContrato('schemaPet/getPet200.json', response.body);\n});",
+              "err": {
+                "message": "AssertionError: expected 404 to equal 200",
+                "estack": "AssertionError: expected 404 to equal 200\n    at Context.eval (webpack://api-teste-pet-store/./cypress/e2e/pet/getPet.cy.js:14:33)\n    at getRet (http://localhost:46751/__cypress/runner/cypress_runner.js:120949:20)\n    at tryCatcher (http://localhost:46751/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (http://localhost:46751/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (http://localhost:46751/__cypress/runner/cypress_runner.js:120960:66)\n    at Context.then (http://localhost:46751/__cypress/runner/cypress_runner.js:121211:21)",
+                "diff": "- 404\n+ 200\n"
+              },
+              "uuid": "ee820fe8-a591-4add-ace9-8267103799f7",
+              "parentUUID": "191f8253-4c6b-473f-96d8-be5fd1e9e690",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Buscar pet inexistente",
+              "fullTitle": "Testes endpoint store order Buscar pet inexistente",
+              "timedOut": null,
+              "duration": 176,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getGenerico(endPointGetPet.getPet, id, auth).then(response => {\n  expect(response.status).to.eq(404);\n  expect(response.statusText).to.eq('Not Found');\n  cy.validaContrato('schemaPet/getPet404.json', response.body);\n});",
+              "err": {},
+              "uuid": "92b9e07d-d965-41ca-aef0-00cc3189b910",
+              "parentUUID": "191f8253-4c6b-473f-96d8-be5fd1e9e690",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "92b9e07d-d965-41ca-aef0-00cc3189b910"
+          ],
+          "failures": [
+            "ee820fe8-a591-4add-ace9-8267103799f7"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 410,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c6c6517f-4ff3-4322-bad2-0189d0567407",
+      "title": "",
+      "fullFile": "cypress/e2e/pet/putPet.cy.js",
+      "file": "cypress/e2e/pet/putPet.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9c3c118b-adab-4327-9d18-054e41d026f7",
+          "title": "Testes endpoint store order",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Buscar pet com sucesso",
+              "fullTitle": "Testes endpoint store order Buscar pet com sucesso",
+              "timedOut": null,
+              "duration": 196,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_putPet.requestComSucesso.name = _faker.faker.person.firstName();\n_putPet.requestComSucesso.category.name = _faker.faker.person.firstName();\ncy.putGenericoBody(endPointPutPet.putPet, id, _putPet.requestComSucesso, auth).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body.name).to.eq(_putPet.requestComSucesso.name);\n  expect(response.body.category.name).to.eq(_putPet.requestComSucesso.category.name);\n  cy.validaContrato('schemaPet/putPet200.json', response.body);\n});",
+              "err": {},
+              "uuid": "29041fb3-e929-47ab-b037-89cbb3764c13",
+              "parentUUID": "9c3c118b-adab-4327-9d18-054e41d026f7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "29041fb3-e929-47ab-b037-89cbb3764c13"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 196,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "bd84640d-3f49-4cbf-be64-3f73a0dcf598",
+      "title": "",
+      "fullFile": "cypress/e2e/store/postStoreOrder.cy.js",
+      "file": "cypress/e2e/store/postStoreOrder.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ac003463-2f39-4365-b067-b753fa9caf1b",
+          "title": "Testes endpoint store order",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastrar novo pedido com sucesso",
+              "fullTitle": "Testes endpoint store order Cadastrar novo pedido com sucesso",
+              "timedOut": null,
+              "duration": 197,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.postGenerico(endPointStoreOder.postStoreOrder, _postStoreOrder.requestComSucesso, auth).then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body.id).not.be.null;\n  cy.validaContrato('schemaStore/postStoreOrder200.json', response.body);\n});",
+              "err": {},
+              "uuid": "ffa5bb0e-fd84-4e06-889d-c26b55cdc94c",
+              "parentUUID": "ac003463-2f39-4365-b067-b753fa9caf1b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ffa5bb0e-fd84-4e06-889d-c26b55cdc94c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 197,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "dd-mm-yyyy_HH-MM-ss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
