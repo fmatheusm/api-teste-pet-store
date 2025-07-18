@@ -1,5 +1,5 @@
 {
-  "name": "tests",
+  "name": "api-teste-pet-store",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
@@ -7,13 +7,21 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "cy:run": "npx cypress run",
-    "open": "cypress open"
+    "cy:run": "npx cypress run --reporter mochawesome || true",
+    "open": "cypress open",
+    "report:clean": "rm -rf cypress/reports && rm -rf final-report && rm -f report.json",
+    "report:merge": "mochawesome-merge \"cypress/reports/*.json\" > report.json",
+    "report:generate": "marge report.json --reportDir final-report",
+    "report:open": "open final-report/report.html",
+    "test:full": "npm run report:clean && npm run cy:run && npm run report:merge && npm run report:generate && npm run report:open"
   },
   "devDependencies": {
     "@faker-js/faker": "^9.9.0",
     "chai-json-schema": "^1.5.1",
     "chai-json-schema-ajv": "^5.2.4",
-    "cypress": "^14.5.1"
+    "cypress": "^14.5.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }
