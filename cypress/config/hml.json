@@ -1,0 +1,12 @@
+{
+  "env": {
+    "store": {
+      "postStoreOrder": "store/order"
+    },
+    "pet": {
+      "getPet": "pet/",
+      "getFindByStatus": "pet/findByStatus",
+      "putPet": "pet"
+    }
+  }
+}

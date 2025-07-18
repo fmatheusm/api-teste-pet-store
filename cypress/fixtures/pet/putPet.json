@@ -1,0 +1,25 @@
+{
+    "requestComSucesso": {
+        "id": 80,
+        "category": {
+            "id": 10,
+            "name": "Рыба"
+        },
+        "name": "Дружок",
+        "photoUrls": [
+            "esse Ut elit",
+            "sint magna"
+        ],
+        "tags": [
+            {
+                "id": -36555706,
+                "name": "voluptate dolor nulla labore"
+            },
+            {
+                "id": 3842154,
+                "name": "deserunt "
+            }
+        ],
+        "status": "available"
+    }
+}

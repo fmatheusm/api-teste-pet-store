@@ -1,0 +1,10 @@
+{
+  "buscarPetSucesso": {
+    "petId": 1,
+    "name": "doggie",
+    "category": {
+      "id": 653,
+      "name": "string"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "tests",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "npx cypress run",
+    "open": "cypress open"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "chai-json-schema": "^1.5.1",
+    "chai-json-schema-ajv": "^5.2.4",
+    "cypress": "^14.5.1"
+  }
+}
